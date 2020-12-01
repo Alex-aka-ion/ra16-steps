@@ -1,11 +1,13 @@
 import React from "react";
 
-export default function StepItem({item: {date, distance}, onSubmit}) {
+export default function StepItem({item: {date, distance}, onDelete}) {
+    const dateFormatted = `${date.substring(8,10)}.${date.substring(5,7)}.${date.substring(0,4)}`;
+
     return (
         <div>
-            <div>{date}</div>
+            <div>{dateFormatted}</div>
             <div>{distance}</div>
-            <button onClick={onSubmit}>X</button>
+            <button onClick={onDelete}>X</button>
         </div>
     )
 }
